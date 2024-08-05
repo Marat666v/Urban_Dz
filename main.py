@@ -1,9 +1,12 @@
-a = int(input())
-s = []
-for i in range(1, a):
-    for j in range(1, a):
-        n = i+j
-        if a%n==0 and i<j:
-            s.append(1)
-            s.append(1)
-print(print(''.join(map(str, s))))
+def single_root_words(root_word, *other_words):
+    same_words = []
+    for key in other_words:
+        if root_word.lower() in key.lower() or key.lower() in root_word.lower():
+            same_words.append(key)
+
+    return same_words
+
+result1 = single_root_words('rich', 'richiest', 'orichalcum', 'cheers', 'richies')
+result2 = single_root_words('Disablement', 'Able', 'Mable', 'Disable', 'Bagel')
+print(result1)
+print(result2)

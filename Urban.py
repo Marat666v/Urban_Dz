@@ -1,19 +1,14 @@
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-primes = []
-not_primes = []
-for i in numbers:
-    if i == 1:
-        continue
-    is_prime = True
-    for j in range(2, i):
-        if i % j == 0:
-            is_prime = False
-            break
-    if is_prime:
-        primes.append(i)
-    else:
-        not_primes.append(i)
+def print_params(a=1, b='Storka', c=True):
+    print(a, b, c)
 
 
-print(f'Primes: {primes}')
-print(f'Not Primes: {not_primes}')
+print_params(b=25)
+#print_paramsc = (c = [1,2,3]) Так поменять не получиться
+
+values_list = [58, 'ctr', False]
+values_dict = {'a': 1, 'b': 'Stroka', 'c': True}
+valuea_list_2 = [54.32, 'stroka']
+print_params(*valuea_list_2, 42)
+
+print_params(*values_list)
+print_params(**values_dict)
